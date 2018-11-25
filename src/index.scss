@@ -1,0 +1,19 @@
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+body {
+    padding: 1rem 0;
+}
+
+.chat {
+    padding-top: 1rem;
+    background: lightblue;
+}
+
+.message {
+    margin: 0 1rem 1rem;
+    background: #fff;
+    padding: .5rem;
+    .user {
+        font-weight: 700;
+    }
+}
