@@ -1,19 +1,80 @@
-@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "~bootstrap/scss/bootstrap.scss";
+
+$body-padding: 1rem;
+$header-height: 2rem;
 
 body {
-    padding: 1rem 0;
+    padding: $body-padding 0;
 }
 
-.chat {
-    padding-top: 1rem;
-    background: lightblue;
+.login {
+    margin: auto;
+    margin-top: 4rem;
+    max-width: 20rem;
+
+    @extend .text-center;
 }
 
-.message {
-    margin: 0 1rem 1rem;
-    background: #fff;
-    padding: .5rem;
+.header {
+    height: $header-height;
+
+    .online {
+        color: $success;
+    }
+
+    .offline {
+        color: $danger;
+    }
+}
+
+.users-list {
+    overflow-y: scroll;
+    outline: 1px solid $secondary;
+    max-height: 80vh;
+    padding: .5rem .5rem 0;
+    height: calc(100vh - 20rem);
     .user {
+        margin-bottom: .5rem;
+        background: lightgrey;
+        padding: .5rem;
         font-weight: 700;
+        width: 100%;
+
+        &.online {
+            background: lightgreen;
+        }
+    }
+}
+
+.messages {
+    outline: 1px solid $secondary;
+    overflow-y: scroll;
+    background: lightblue;
+    height: calc(100vh - 14rem);
+    margin-bottom: 1rem;
+    padding-bottom: .5rem;
+
+    .message {
+        margin: .5rem;
+        background: #fff;
+        padding: .5rem;
+        border-radius: 3px;
+
+        .user {
+            font-weight: 700;
+        }
+    }
+
+    .typing {
+        
+    }
+
+    .status-update, .timestamp {
+        font-size: .875rem;
+        color: grey;
+    }
+
+    .status-update {
+        text-align: center;
     }
 }
