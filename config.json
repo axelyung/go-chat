@@ -1,5 +1,0 @@
-{
-    "port": 3001,
-    "dbConnectionString": "",
-    "dbName": "go_chat"
-}
