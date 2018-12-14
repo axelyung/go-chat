@@ -1,0 +1,30 @@
+version: "3"
+
+services:
+  server:
+    container_name: go_chat_server
+    restart: always
+    build: .
+    env_file: .env
+    volumes:
+      - .:/go/src/github.com/axelyung/go-chat
+    depends_on:
+      - mongo
+    links:
+      - mongo
+    command: go run main.go
+    ports:
+      - "3000:3000"
+
+  mongo:
+    container_name: go_chat_db
+    image: mongo:4
+    env_file: .env
+    command: mongod --port ${DB_PORT}
+    volumes:
+      - ./data:/data/db
+    ports:
+     - "${DB_PORT}:${DB_PORT}"
+
+volumes:
+  data: {}
